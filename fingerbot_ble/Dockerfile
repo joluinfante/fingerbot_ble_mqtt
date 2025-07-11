@@ -1,5 +1,5 @@
-ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base:latest
-FROM 
+ARG BUILD_FROM=ghcr.io/home-assistant/raspberrypi4-64-homeassistant-base:latest
+FROM ${BUILD_FROM}
 
 # Install python3 and bluez tools
 RUN apk add --no-cache     python3     py3-pip     bluez     bluez-libs     bluez-dev     dbus
