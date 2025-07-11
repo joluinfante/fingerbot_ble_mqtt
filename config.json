@@ -1,0 +1,17 @@
+{
+  "name": "Fingerbot BLE MQTT",
+  "version": "1.0",
+  "slug": "fingerbot_ble_mqtt",
+  "description": "Controla Fingerbot Tuya vía BLE y MQTT desde Home Assistant",
+  "arch": ["armv7", "armhf", "aarch64", "amd64"],
+  "startup": "application",
+  "boot": "auto",
+  "options": {
+    "mqtt_broker": "mqtt://core-mosquitto",
+    "mqtt_topic_prefix": "fingerbot"
+  },
+  "schema": {
+    "mqtt_broker": "str",
+    "mqtt_topic_prefix": "str"
+  }
+}
