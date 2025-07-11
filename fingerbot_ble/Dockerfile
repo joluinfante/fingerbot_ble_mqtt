@@ -1,8 +1,13 @@
-ARG BUILD_FROM=ghcr.io/home-assistant/raspberrypi4-64-homeassistant-base:latest
-FROM ${BUILD_FROM}
+FROM ghcr.io/home-assistant/raspberrypi4-64-homeassistant-base:latest
 
 # Install python3 and bluez tools
-RUN apk add --no-cache     python3     py3-pip     bluez     bluez-libs     bluez-dev     dbus
+RUN apk add --no-cache \
+    python3 \
+    py3-pip \
+    bluez \
+    bluez-libs \
+    bluez-dev \
+    dbus
 
 # Install Python dependencies
 COPY requirements.txt .
@@ -15,3 +20,4 @@ COPY fingerbot-mqtt.py /fingerbot-mqtt.py
 RUN chmod a+x /run.sh
 
 CMD [ "/run.sh" ]
+
